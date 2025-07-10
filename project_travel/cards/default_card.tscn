@@ -1,0 +1,111 @@
+[gd_scene load_steps=9 format=3 uid="uid://d2wngwsdfqjnc"]
+
+[ext_resource type="Script" uid="uid://8kqm5tgpfqro" path="res://cards/card_factory/create_card.gd" id="1_8in86"]
+[ext_resource type="Texture2D" uid="uid://divu2maqo7tpq" path="res://cards/card_resources/default/default_frame.png" id="1_teblk"]
+[ext_resource type="Texture2D" uid="uid://bgxhx53l4x54v" path="res://cards/card_resources/default/default_art.png" id="2_8in86"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_iacft"]
+font_size = 71
+font_color = Color(1, 0, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_lw1nj"]
+font_size = 42
+font_color = Color(1, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_h3iwe"]
+font_size = 28
+font_color = Color(0, 1, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_sk75x"]
+font_size = 28
+font_color = Color(0, 1, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0p3wg"]
+font_size = 28
+font_color = Color(0.683333, 1, 0, 1)
+
+[node name="default_card2" type="Node2D"]
+script = ExtResource("1_8in86")
+
+[node name="frame" type="Sprite2D" parent="."]
+position = Vector2(-6, 0)
+texture = ExtResource("1_teblk")
+
+[node name="card_art" type="Sprite2D" parent="."]
+position = Vector2(-268, -420)
+texture = ExtResource("2_8in86")
+centered = false
+
+[node name="mana" type="Label" parent="."]
+offset_left = -268.0
+offset_top = -420.0
+offset_right = -193.0
+offset_bottom = -323.0
+size_flags_horizontal = 4
+text = "2"
+label_settings = SubResource("LabelSettings_iacft")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="name" type="Label" parent="."]
+offset_left = -98.0
+offset_top = -420.0
+offset_right = 140.0
+offset_bottom = -362.0
+size_flags_horizontal = 4
+text = "[PH] Names"
+label_settings = SubResource("LabelSettings_lw1nj")
+horizontal_alignment = 1
+
+[node name="speed" type="Label" parent="."]
+offset_left = -68.0
+offset_top = -204.0
+offset_right = 92.0
+offset_bottom = -160.0
+size_flags_horizontal = 4
+text = "burst"
+label_settings = SubResource("LabelSettings_h3iwe")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="class" type="Label" parent="."]
+anchors_preset = -1
+offset_left = -69.0
+offset_top = -337.0
+offset_right = 93.0
+offset_bottom = -254.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "quickstriker
+"
+label_settings = SubResource("LabelSettings_sk75x")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="type" type="Label" parent="."]
+offset_left = -98.0
+offset_top = -278.0
+offset_right = 108.0
+offset_bottom = -195.0
+size_flags_horizontal = 4
+text = "melee
+"
+label_settings = SubResource("LabelSettings_0p3wg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="description" type="RichTextLabel" parent="."]
+anchors_preset = -1
+offset_left = -268.0
+offset_right = 272.0
+offset_bottom = 364.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\""
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1

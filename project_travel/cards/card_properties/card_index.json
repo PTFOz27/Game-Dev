@@ -1,0 +1,75 @@
+{
+  "quickstriker": [
+	{
+	  "id": "101001",
+	  "name": "[PH]Slash",
+	  "mana": 1,
+	  "type": "melee",
+	  "class": "Quick Striker",
+	  "speed": "Normal",
+	  "description": "Strike the target",
+	  "position": {
+		"playable": ["-1", "-2", "-3", "-4"],
+		"target": 
+		{
+  			"options": ["1", "2", "3"],
+  			"mode": ["all", null]
+		}
+	  }
+	},
+	{
+	  "id": "101002",
+	  "name": "[PH]Backfire",
+	  "mana": 3,
+	  "type": "Melee",
+	  "class": "Quick Striker",
+	  "speed": "Burst",
+	  "description": "Strike the target, and move back 1",
+	  "position": {
+		"playable": ["-1", "-2", "-3", "-4"],
+		"target": 
+		{
+  			"options": ["1", "2", "3"],
+  			"mode": ["random", 2]
+		}
+	  }
+	}
+  ],
+	"elemental": [
+	{
+	  "id": "102001",
+	  "name": "[PH]Fireball",
+	  "mana": 2,
+	  "type": "melee",
+	  "class": "Mage",
+	  "speed": "Normal",
+	  "description": "Strike the target",
+	  "position": {
+		"playable": ["-1", "-2", "-3", "-4"],
+		"target": 
+		{
+  			"options": ["1,2", "2,3", "3,4"],
+  			"mode": ["select", 1]
+		}
+	  }
+	},
+	{
+	  "id": "102002",
+	  "name": "[PH]Wildfire",
+	  "mana": 3,
+	  "type": "Melee",
+	  "class": "Mage",
+	  "speed": "Burst",
+	  "description": "Set 3 enemies on fire",
+	  "position": 
+	  {
+		"playable": ["-1", "-2", "-3", "-4"],
+		"target": 
+		{
+  			"options": ["1", "2", "3", "4"],
+  			"mode": ["exact", 2]
+		}
+	  }
+	}
+  ]
+}

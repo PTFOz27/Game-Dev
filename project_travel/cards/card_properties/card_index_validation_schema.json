@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "patternProperties": {
+	"^[A-Za-z]+$": {
+	  "type": "array",
+	  "items": {
+		"type": "object",
+		"properties": {
+		  "id": { "type": "integer" },
+		  "name": { "type": "string" },
+		  "mana": { "type": "integer", "minimum": 0 },
+		  "type": { "type": "string" },
+		  "speed": {
+			"type": "string",
+			"enum": ["Normal", "Burst", "Slow"]
+		  },
+		  "description": { "type": "string" },
+		  "position": {
+			"type": "object",
+			"properties": {
+			  "playable": {
+				"type": "array",
+				"items": { "type": "integer" }
+			  },
+			  "target": {
+				"type": "array",
+				"items": { "type": "integer" }
+			  }
+			},
+			"required": ["playable", "target"],
+			"additionalProperties": false
+		  },
+		  "comment": { "type": "string" } 
+		},
+		"required": ["id", "name", "mana", "type", "speed", "description", "position"],
+		"additionalProperties": false
+	  }
+	}
+  },
+  "additionalProperties": false
+}
