@@ -1,7 +1,9 @@
 extends Node2D
+
 func _ready():
 	create_card("102002")
-
+	self.position = Vector2 (400, 400)
+	
 func create_card(card_id: String) -> void:
 	# Get card data from your autoload singleton
 	var card = card_database.card_by_id.get(card_id, null)
@@ -28,3 +30,10 @@ func create_card(card_id: String) -> void:
 	else: 
 		push_warning("Frame art not found for card class %s" % card["class"]) 
 		$frame.texture = load("res://cards/card_resources/default/default_frame.png")
+		
+func get_card_size():
+	if $frame.texture:
+		return $frame.texture.get_size() * $frame.scale
+	return Vector2.ZERO
+	
+# Hover System
