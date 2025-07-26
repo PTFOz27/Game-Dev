@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://d1cs6sild1yth"]
+[gd_scene load_steps=7 format=3 uid="uid://d1cs6sild1yth"]
 
 [ext_resource type="Script" uid="uid://b46hlcx2poxy1" path="res://combat/combat_hand_and_deck.gd" id="1_q5cen"]
+[ext_resource type="PackedScene" uid="uid://dr2n4h8o7xag8" path="res://character/default_character.tscn" id="2_a5s3s"]
+[ext_resource type="PackedScene" uid="uid://dssdfoeak1n2w" path="res://enemy/default_enemy.tscn" id="3_bvt4u"]
 
 [sub_resource type="Curve" id="Curve_q5cen"]
 _data = [Vector2(0, 0), 0.0, 1.0, 0, 1, Vector2(1, 1), 1.0, 0.0, 1, 0]
@@ -55,5 +57,37 @@ offset_top = 82.0
 offset_right = 211.0
 offset_bottom = 145.0
 text = "Draw 1 Card"
+
+[node name="DefaultCharacter" parent="." instance=ExtResource("2_a5s3s")]
+position = Vector2(416, 312)
+scale = Vector2(4, 4)
+
+[node name="DefaultCharacter2" parent="." instance=ExtResource("2_a5s3s")]
+position = Vector2(480, 312)
+scale = Vector2(4, 4)
+
+[node name="DefaultCharacter3" parent="." instance=ExtResource("2_a5s3s")]
+position = Vector2(544, 312)
+scale = Vector2(4, 4)
+
+[node name="DefaultCharacter4" parent="." instance=ExtResource("2_a5s3s")]
+position = Vector2(608, 312)
+scale = Vector2(4, 4)
+
+[node name="DefaultEnemy" parent="." instance=ExtResource("3_bvt4u")]
+position = Vector2(736, 320)
+scale = Vector2(3, 3)
+
+[node name="DefaultEnemy2" parent="." instance=ExtResource("3_bvt4u")]
+position = Vector2(800, 320)
+scale = Vector2(3, 3)
+
+[node name="DefaultEnemy3" parent="." instance=ExtResource("3_bvt4u")]
+position = Vector2(864, 320)
+scale = Vector2(3, 3)
+
+[node name="DefaultEnemy4" parent="." instance=ExtResource("3_bvt4u")]
+position = Vector2(928, 320)
+scale = Vector2(3, 3)
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
