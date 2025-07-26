@@ -54,6 +54,5 @@ func update_hand() -> void:
 			#card.rotation = rotation_curve.sample(hand_ratio)
 			print("🧩 Position:", card.position, " Size:", card.scale, " Global:", card.global_position)
 
-
 func _on_button_pressed() -> void:
 	draw_hand(1)

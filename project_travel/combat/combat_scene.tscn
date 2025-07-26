@@ -29,16 +29,14 @@ rotation_curve = SubResource("Curve_bvt4u")
 anchors_preset = -1
 anchor_right = 0.961
 anchor_bottom = 1.027
-offset_left = 200.0
-offset_top = 400.0
-offset_right = 1000.0
+offset_left = 608.0
+offset_top = 512.0
+offset_right = 1152.0
 offset_bottom = 640.0
 
 [node name="hand_container" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
 
 [node name="hand" type="Control" parent="hand_container"]
 layout_mode = 1
@@ -46,9 +44,10 @@ anchor_left = 15.0
 anchor_top = 16.0
 anchor_right = 15.0
 anchor_bottom = 16.0
-offset_left = -400.0
-offset_top = -240.0
-offset_right = 400.0
+offset_left = 608.0
+offset_top = 512.0
+offset_right = 1160.0
+offset_bottom = 640.0
 
 [node name="Button" type="Button" parent="."]
 offset_left = 43.0
