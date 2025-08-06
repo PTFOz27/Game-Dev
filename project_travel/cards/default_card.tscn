@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://d2wngwsdfqjnc"]
 
-[ext_resource type="Script" uid="uid://8kqm5tgpfqro" path="res://cards/card_factory/create_card.gd" id="1_8in86"]
+[ext_resource type="Script" uid="uid://8kqm5tgpfqro" path="res://cards/card_loader.gd" id="1_8in86"]
 [ext_resource type="Texture2D" uid="uid://divu2maqo7tpq" path="res://cards/card_resources/default/default_frame.png" id="1_teblk"]
 [ext_resource type="Texture2D" uid="uid://bgxhx53l4x54v" path="res://cards/card_resources/default/default_art.png" id="2_8in86"]
 
@@ -30,15 +30,17 @@ font_color = Color(0.683333, 1, 0, 1)
 [node name="default_card2" type="Node2D"]
 script = ExtResource("1_8in86")
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="collision_shape" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_8in86")
-debug_color = Color(0, 0.795908, 0.859451, 0.42)
-
 [node name="frame" type="Sprite2D" parent="."]
 position = Vector2(-6, 0)
 texture = ExtResource("1_teblk")
+
+[node name="Area2D" type="Area2D" parent="frame"]
+modulate = Color(0.0823529, 1, 1, 1)
+position = Vector2(6, 0)
+
+[node name="collision_shape" type="CollisionShape2D" parent="frame/Area2D"]
+shape = SubResource("RectangleShape2D_8in86")
+debug_color = Color(0, 0.795908, 0.859451, 0.42)
 
 [node name="card_art" type="Sprite2D" parent="."]
 position = Vector2(-268, -420)
@@ -123,5 +125,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[connection signal="mouse_shape_entered" from="Area2D" to="." method="_on_collision_shape_mouse_shape_entered"]
-[connection signal="mouse_shape_exited" from="Area2D" to="." method="_on_collision_shape_mouse_shape_exited"]
+[connection signal="input_event" from="frame/Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="frame/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="frame/Area2D" to="." method="_on_area_2d_mouse_exited"]

@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Project_Travel"
+config/name="Project_Travel_Current"
 run/main_scene="uid://d1cs6sild1yth"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
