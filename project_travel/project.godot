@@ -18,3 +18,5 @@ config/icon="res://icon.svg"
 [autoload]
 
 card_database="*res://cards/card_properties/card_fetch_data.gd"
+hand_manager="*res://cards/hand_manager.gd"
+card_functions="*res://cards/card_functions.gd"

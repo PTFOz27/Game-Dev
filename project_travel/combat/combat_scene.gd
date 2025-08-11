@@ -1,8 +1,9 @@
 extends Node2D
-const load_hand_and_deck = preload("res://combat/load_hand_and_deck.gd")
-var hand_loader = load_hand_and_deck.new()
 
 func _ready():
-	hand_loader.update_hand()
+	hand_manager.hand_node = $hand_container/hand
+	hand_manager.player_deck = ["101001", "101002", "102001", "102001", "102002", "101001", "101002", "102001", "102001", "101001", "101002", "102001", "102001", "101001", "101002", "102001", "102001", "101001", "101002", "102001", "102001", "101001", "101002", "102001", "102001", "101001", "101002", "102001", "102001", "101001", "101002", "102001", "102001", "101001", "101002", "102001", "102001", ]
+	hand_manager.player_hand = []
+	hand_manager.update_hand()
 func button_draw_card() -> void:
-	hand_loader.draw_card(1)
+	card_functions.draw_card(1)
