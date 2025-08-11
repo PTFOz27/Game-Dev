@@ -79,15 +79,16 @@ animations = [{
 script = ExtResource("1_6n8mm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(32, 64)
+scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_m7vo8")
 animation = &"idle"
 frame_progress = 0.539989
 
 [node name="HealthBar" type="TextureProgressBar" parent="."]
-offset_left = -8.0
-offset_top = 16.0
-offset_right = 8.0
-offset_bottom = 19.0
+offset_top = 136.0
+offset_right = 64.0
+offset_bottom = 144.0
 nine_patch_stretch = true
 texture_under = ExtResource("3_re5ld")
 texture_over = ExtResource("4_k5yue")

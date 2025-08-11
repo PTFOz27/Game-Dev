@@ -52,7 +52,7 @@ func draw_card(count:int):
 			player_hand.append(card_id)
 			var card = card_default.instantiate()
 			hand_node.add_child(card)
-			card.create_card(card_id)
+			card.create_card(card_id) #This creates the card card u want
 			print("Created card with ID: ", card_id)
 		print("🃏 Cards in hand: %d" % hand_node.get_child_count())
 		update_hand()
