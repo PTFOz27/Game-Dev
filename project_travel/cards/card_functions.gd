@@ -7,30 +7,16 @@ func play_card(card_id: String):
 	if card == null:
 		push_error("Card_data not found: %s" % card_id)
 		return
-	
 	var play_position = card["position"]["playable"]
 	#Need to place the combat scene and put placeholder allys in place
-	
 	var target_info = card["position"]["target"]
 	var options = target_info["options"]
 	var mode = target_info["mode"]
 	var mode_type = mode[0]
 	var mode_value = mode[1]
 
-	
-	
-	
-	
-
 	#var targets = resolve_targets(target_info["options"], target_info["mode"])
 	#print("Targets chosen for %s: %s" % [card["name"], targets])
-	
-	
-	
-	
-	
-	
-	
 	var script_path = "res://cards/card_properties/card_scripts/%s.gd" % card_id
 	var script = load(script_path)
 	if script == null:
@@ -43,7 +29,7 @@ func play_card(card_id: String):
 	else:
 		push_error("⚠️ Script %s has no 'play()' method" % script_path)
 		
-func resolve_targets(options: Array, mode: Array) -> Array:
+func resolve_targets(options: Array, mode: Array) -> Array: 
 	var mode_type = mode[0]
 	var mode_value = mode[1]
 	var final_targets = []
@@ -64,6 +50,17 @@ func resolve_targets(options: Array, mode: Array) -> Array:
 			final_targets = options
 
 	return final_targets
-
+var selected_character:Node = null
+func select_character(character: Node):
+	selected_character = character
+	print("Selected character: %s" % character.name)	
+func deselect():
+	selected_character = null
 func draw_card(count:int):
 	hand_manager.draw_card(count)
+func deal_damage(count:int):
+	if selected_character:
+		selected_character.combat_hp -= count
+	else:
+		print("No character selected!")
+		
